@@ -8,27 +8,22 @@ namespace PdfProcessor.Data.Repositories
         private readonly PdfProcessorDbContext _dbContext;
         public PdfDocumentRepository(PdfProcessorDbContext dbContext) => _dbContext = dbContext;
 
-        public async Task CreateAsync(PdfDocument document)
-        {
-            await _dbContext.AddAsync(document);
-        }
+        public void Add(PdfDocument document) => _dbContext.PdfDocuments.Add(document);
 
-        public async Task<string?> GetContentByIdAsync(Guid fileId)
+        public async Task<PdfDocument?> GetByIdAsync(Guid fileId)
         {
             return await _dbContext.PdfDocuments
                 .AsNoTracking()
-                .Where(d => d.Id == fileId)
-                .Select(d => d.Content)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(d => d.Id == fileId);
         }
 
         public async Task<List<PdfDocument>> GetPdfDocumentsAsync(int pageNumber, int pageSize)
         {
             return await _dbContext.PdfDocuments
                 .AsNoTracking()
+                .OrderByDescending(d => d.Id)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
-                .OrderByDescending(d => d.Id)
                 .ToListAsync();
         }
     }

@@ -7,6 +7,8 @@ namespace PdfProcessor.Data.Repositories
 {
     public interface IPdfDocumentRepository
     {
-        Task CreateAsync(PdfDocument document);
+        void Add(PdfDocument document);
+        Task<PdfDocument?> GetByIdAsync(Guid fileId);
+        Task<List<PdfDocument>> GetPdfDocumentsAsync(int pageNumber, int pageSize);
     }
 }

@@ -3,6 +3,7 @@
     <File Path=".gitignore" />
   </Folder>
   <Project Path="PdfProcessor.API/PdfProcessor.API.csproj" />
+  <Project Path="PdfProcessor.Data/PdfProcessor.Data.csproj" Id="b6ff5f1d-629b-45a6-8af3-b99e3a753211" />
   <Project Path="PdfProcessor.Shared/PdfProcessor.Shared.csproj" />
   <Project Path="PdfProcessor.Worker/PdfProcessor.Worker.csproj" />
 </Solution>
