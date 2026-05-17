@@ -17,6 +17,12 @@ namespace PdfProcessor.Data.Repositories
                 .FirstOrDefaultAsync(d => d.Id == fileId);
         }
 
+        public async Task<PdfDocument?> GetTrackedByIdAsync(Guid id)
+        {
+            return await _dbContext.PdfDocuments
+                .FirstOrDefaultAsync(d => d.Id == id);
+        }
+
         public async Task<List<PdfDocument>> GetPdfDocumentsAsync(int pageNumber, int pageSize)
         {
             return await _dbContext.PdfDocuments

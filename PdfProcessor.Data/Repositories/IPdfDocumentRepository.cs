@@ -10,5 +10,6 @@ namespace PdfProcessor.Data.Repositories
         void Add(PdfDocument document);
         Task<PdfDocument?> GetByIdAsync(Guid fileId);
         Task<List<PdfDocument>> GetPdfDocumentsAsync(int pageNumber, int pageSize);
+        Task<PdfDocument?> GetTrackedByIdAsync(Guid id);
     }
 }
