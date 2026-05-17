@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
   <Project Path="PdfProcessor.API/PdfProcessor.API.csproj" />
+  <Project Path="PdfProcessor.Shared/PdfProcessor.Shared.csproj" />
   <Project Path="PdfProcessor.Worker/PdfProcessor.Worker.csproj" />
 </Solution>
