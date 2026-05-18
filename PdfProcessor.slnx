@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
+    <File Path="docker-compose.yml" />
   </Folder>
   <Project Path="PdfProcessor.API/PdfProcessor.API.csproj" />
   <Project Path="PdfProcessor.Data/PdfProcessor.Data.csproj" Id="b6ff5f1d-629b-45a6-8af3-b99e3a753211" />

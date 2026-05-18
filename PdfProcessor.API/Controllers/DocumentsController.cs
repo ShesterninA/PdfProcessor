@@ -30,7 +30,7 @@ public class DocumentsController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<UploadPdfResult>> Upload([FromForm] IFormFile file)
+    public async Task<ActionResult<UploadPdfResult>> Upload(IFormFile file)
     {
         var result = await _documentService.UploadPdfAsync(file);
         return CreatedAtAction(nameof(GetDocumentContent), new { id = result.Id }, result);

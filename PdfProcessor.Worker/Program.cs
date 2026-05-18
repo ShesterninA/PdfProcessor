@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PdfProcessor.Data;
+using PdfProcessor.Data.Repositories;
 using PdfProcessor.Worker;
 using PdfProcessor.Worker.Services;
 using PdfProcessor.Worker.Settings;
@@ -17,6 +18,7 @@ builder.Services.AddDbContext<PdfProcessorDbContext>(options =>
         builder.Configuration.GetConnectionString("Postgres")));
 
 builder.Services.AddScoped<IPdfTextExtractor, PdfTextExtractor>();
+builder.Services.AddScoped<IPdfDocumentRepository, PdfDocumentRepository>();
 
 builder.Services.AddHostedService<Worker>();
 
